@@ -4,9 +4,10 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.common.action_chains import ActionChains
+#from selenium.webdriver.common.action_chains import ActionChains
 import random
 import string
+import time
 
 firefox_options = Options()
 firefox_options.headless = True
@@ -53,7 +54,7 @@ random_string = ''.join(random.choice(characters) for i in range(10))
 username_field=driver.find_element(By.NAME,'Username')
 username_field.send_keys(random_string)
 
-next_buttons = driver.find_element(By.CLASS_NAME,'VfPpkd-vQzf8d')
+next_buttons = driver.find_element(By.CLASS_NAME,'VfPpkd-Jh9lGc')
 driver.execute_script("arguments[0].click();", next_button)
 
 wait = WebDriverWait(driver, 10)
@@ -71,4 +72,4 @@ next_button.click()
 
 
 # Close the browser
-#driver.quit()
+driver.quit()
